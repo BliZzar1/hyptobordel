@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CCM2025_HelloWorld</string>
+    <string name="contenu_textview">Bonjour Monde ! (df)</string>
+    <string name="exit_button" translatable="false">Quitter</string>
+</resources>

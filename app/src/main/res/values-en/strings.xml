@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CCM2025_HelloWorld</string>
+    <string name="contenu_textview">Hello World ! (en)</string>
+</resources>
