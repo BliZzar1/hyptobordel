@@ -9,6 +9,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContract;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -17,6 +20,8 @@ import androidx.core.view.WindowInsetsCompat;
 public class ActivitePrincipale extends AppCompatActivity {
 
     private Button buttonSecondWay;
+
+    private ActivityResultLauncher<Intent> monLauncher;
     private final static String TAG = ActivitePrincipale.class.getSimpleName();
 
     @Override
@@ -29,8 +34,21 @@ public class ActivitePrincipale extends AppCompatActivity {
 
         buttonSecondWay = findViewById(R.id.id_second_exit_way);
         buttonSecondWay.setOnClickListener(this::clickSecondButton);
-
+        monLauncher=registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                resultat ->{
+                    if(resultat.getResultCode()==RESULT_OK){
+                        Intent data=resultat.getData();
+                        Toast.makeText(this, data.getStringExtra("goatRetour"), Toast.LENGTH_LONG).show();
+                    }else{
+                        Intent data=resultat.getData();
+                        Toast.makeText(this, "pas tux", Toast.LENGTH_LONG).show();
+                    }
+                }
+        );
     }
+
+
     private void clickSecondButton(View view) {
         //Logs dans logcat
         Log.d(TAG, "Le bouton à été cliqué");
@@ -56,6 +74,22 @@ public class ActivitePrincipale extends AppCompatActivity {
         //Log.d(TAG, monSuperEditText.getText().toString());
 
         monIntent.putExtra("Texte", monSuperEditText.getText().toString());
+        startActivity(monIntent);
+    }
+
+    public void launchActivity3(View view) {
+
+        Intent monIntent = new Intent(this, ActiviteTertiaire.class);
+
+        Bundle monBundle = new Bundle();
+        monBundle.putString("goat", "Tux");
+        monIntent.putExtras(monBundle);
+
+        monLauncher.launch(monIntent);
+    }
+
+    public void onClick_scroll(View view){
+        Intent monIntent = new Intent(this, decouverteRecyclerViewAkaScroll.class);
         startActivity(monIntent);
     }
 }

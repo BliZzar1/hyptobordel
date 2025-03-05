@@ -5,15 +5,15 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActiviteSecondaire">
+    tools:context=".ActiviteTertiaire">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:rotation="37"
-        android:rotationX="75"
-        android:rotationY="-169"
+        android:rotation="-360"
+        android:rotationX="-291"
+        android:rotationY="-360"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,32 +21,21 @@
         app:srcCompat="@drawable/tuxscuderiaferrari" />
 
     <Button
-        android:id="@+id/id_exit_button_sc2"
-        android:layout_width="192dp"
-        android:layout_height="85dp"
+        android:id="@+id/id_quitter_activite3"
+        android:layout_width="181dp"
+        android:layout_height="86dp"
+        android:layout_marginStart="115dp"
+        android:layout_marginTop="629dp"
+        android:layout_marginEnd="115dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="#FFC107"
-        android:text="Quitter"
+        android:onClick="onClick_quitter_activiter3"
+        android:text="quitter"
         android:textAllCaps="false"
-        android:textSize="34sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/id_bundle_extras_textview"
-        android:layout_width="266dp"
-        android:layout_height="136dp"
-        android:text="teste"
-        android:textAlignment="center"
-        android:textColor="#009688"
-        android:textSize="50sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.099" />
 </androidx.constraintlayout.widget.ConstraintLayout>

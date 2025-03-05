@@ -7,63 +7,105 @@
     android:layout_height="match_parent"
     tools:context=".ActivitePrincipale">
 
-    <TextView
-        android:id="@+id/id_title"
+    <ImageView
+        android:id="@+id/tux"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="26dp"
-        android:text="@string/contenu_textview"
+        android:rotation="-113"
+        android:rotationX="63"
+        android:rotationY="-217"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/tuxscuderiaferrari" />
 
     <Button
         android:id="@+id/id_second_exit_way"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginStart="16dp"
+        android:backgroundTint="#FFC107"
         android:text="Exit second way"
+        app:layout_constraintBottom_toBottomOf="@+id/id_exit_button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/id_exit_button" />
 
     <Button
         android:id="@+id/id_exit_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="56dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="64dp"
+        android:backgroundTint="#FFC107"
         android:onClick="onClickExitButton"
         android:text="@string/exit_button"
-        app:layout_constraintBottom_toBottomOf="@+id/id_second_exit_way"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/id_second_exit_way"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/id_sc2_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#FFC107"
         android:onClick="onClickLancerSecondeActivite"
         android:text="Next"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.219" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/id_editText"
+        app:layout_constraintStart_toEndOf="@+id/id_editText" />
 
     <EditText
         android:id="@+id/id_editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="text"
         android:minHeight="48dp"
         android:text="Text"
+        app:layout_constraintStart_toStartOf="@+id/tux"
+        app:layout_constraintTop_toBottomOf="@+id/id_activity3" />
+
+    <Button
+        android:id="@+id/id_activity3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="6dp"
+        android:backgroundTint="#FFC107"
+        android:onClick="launchActivity3"
+        android:text="activité3"
+        app:layout_constraintStart_toStartOf="@+id/id_second_exit_way"
+        app:layout_constraintTop_toBottomOf="@+id/id_second_exit_way" />
+
+    <TextView
+        android:id="@+id/id_title"
+        android:layout_width="222dp"
+        android:layout_height="33dp"
+        android:text="@string/contenu_textview"
+        android:textAlignment="center"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintEnd_toEndOf="@+id/tux"
+        app:layout_constraintHorizontal_bias="0.915"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.298" />
+        app:layout_constraintVertical_bias="0.22" />
+
+    <Button
+        android:id="@+id/btn_scroll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FFC107"
+        android:onClick="onClick_scroll"
+        android:text="scroll"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.414" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
